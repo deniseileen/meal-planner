@@ -39,7 +39,7 @@ export function ingredientKey(item) {
   const words = base.split(' ').filter(Boolean);
   if (!words.length) return String(item).toLowerCase().trim();
   words[words.length - 1] = singular(words[words.length - 1]);
-  return words.join(' ');
+  return words.join(' ').replace(/^(.+) cheese$/, '$1'); // "ricotta cheese" = "ricotta"
 }
 
 // Units grouped into families that can be added together (base: tsp for volume, oz for weight)
