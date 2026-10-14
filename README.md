@@ -12,6 +12,18 @@ or download everything as text.
 | The world map | Cuisines you cook (one tap = sometimes 📍, two = all the time ⭐), and how adventurous to be |
 | The open cookbook | Favorite recipe sites, plus your own recipes (drop files in or paste them) |
 
+## Where recipes come from
+
+- **Your own recipes** (uploaded or pasted in the cookbook) are numbered. The AI picks them by number, so
+  the link can't break even if it renames the dish. The plate shows your recipe exactly as written, with
+  a separate "Chef Zorp's tweaks for this week" box for any changes (scaling, allergy swaps).
+- **Recipe links:** add a link to any recipe in the cookbook to get a "🔗 View original" button on its plate.
+  A link-only recipe (no text pasted) gets a Chef Zorp version, since the app can't read other websites.
+- **Favorite sites** only set the style. Those recipes are written by the AI and labeled "Inspired by …".
+- **The shopping list** combines repeats across the week. "2 tomatoes, diced" + "1 large tomato" becomes
+  "3 tomatoes", and 1 tbsp + 2 tsp becomes 1⅔ tbsp. Amounts in units that can't be added up stay side by
+  side (e.g. "1 cup + 1 lb").
+
 ## How it works
 
 It's a plain web page. There's no server and no build step.
@@ -31,6 +43,17 @@ Either of these works:
 - **From Git:** connect the repo; `netlify.toml` already tells Netlify to publish the `app` folder.
 
 `app/_headers` adds security headers. It only lets the page talk to OpenRouter, which helps protect the key.
+
+## Add it to your home screen
+
+On iPhone, open the site in Safari → Share → **Add to Home Screen** (on Android, Chrome's menu → **Install app**).
+It opens full-screen with the chef-martian icon, and updates whenever you redeploy (fully close and reopen it).
+
+The home-screen app has its **own storage**, separate from the browser: paste your key in ⚙️ settings and
+import your backup inside the home-screen app. On iPhone this also keeps Safari from erasing the data after
+7 days without a visit.
+
+Icons live in `app/icons/` and are rebuilt from the martian drawing with `bash tools/make_icons.sh`.
 
 ## Run it on your computer
 
