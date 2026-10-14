@@ -1,0 +1,3 @@
+# Netlify: publish only the app folder (no build step needed)
+[build]
+  publish = "app"

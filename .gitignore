@@ -1,0 +1,4 @@
+.env
+old-server-data/
+.DS_Store
+.claude/
